@@ -1,10 +1,6 @@
 <html>
-<head>
-<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-
-</head>
 <body>
-<form action="{{url_for('predict_data')}}" method="POST">
+<form action="{{url_for('predict_datapoint')}}" method="POST">
     <div class="form-group">
         <label for="carat">Carat:</label>
         <input type="text" id="carat" name="carat" placeholder="Enter carat value (float)">
