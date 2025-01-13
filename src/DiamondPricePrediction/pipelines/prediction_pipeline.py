@@ -8,7 +8,7 @@ from src.DiamondPricePrediction.utils.utils import load_object
 class predictPipeline:
     def __init__(self):
         pass
-
+    
     def predict(self,features):
         try:
             preproccesor_path=os.path.join("artifacts","preprocessor.pkl")
@@ -22,12 +22,10 @@ class predictPipeline:
             prediction=model.predict(scaled_data)
             
             return prediction
-           
-
         except Exception as e:
             raise custom_exception(e,sys)
-
-
+        
+        
 class customdata:
     def __init__(self,
                  carat:float,
@@ -49,8 +47,8 @@ class customdata:
         self.cut=cut
         self.color=color
         self.clarity=clarity
-
-
+        
+    
     def get_data_as_dataframe(self):
             try:
                 custom_data_input_dict = {
@@ -70,8 +68,3 @@ class customdata:
             except Exception as e:
                 logging.info('Exception Occured in prediction pipeline')
                 raise custom_exception(e,sys)
-
-
-
-    
-    
